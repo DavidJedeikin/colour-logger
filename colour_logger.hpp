@@ -5,7 +5,7 @@
 #include <memory>
 #include <string>
 
-class Logger {
+class ColourLogger {
 private:
   enum class Colour { Red, Green, Yellow, None };
 
@@ -41,7 +41,7 @@ private:
   }
 
 public:
-  Logger(std::string_view preface) : preface_(preface) {}
+  ColourLogger(std::string_view preface) : preface_(preface) {}
 
   void logRaw(std::string &&msg) { this->log(std::move(msg), Colour::None); }
   void logGreen(std::string &&msg) { this->log(std::move(msg), Colour::Green); }
